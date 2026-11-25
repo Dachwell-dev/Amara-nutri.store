@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#34483a">
+  <meta name="description" content="Équilibre Naturel, l'accompagnement d'Amara Diallo pour apprendre à mieux manger avec des habitudes durables et adaptées à votre quotidien.">
+  <title>Équilibre Naturel — Amara Diallo Nutrition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest:#34483a; --forest-deep:#24352a; --sage:#a3b18a;
+      --sage-light:#e8ecdf; --cream:#f7f4ec; --paper:#fffefa;
+      --sand:#d9a779; --ink:#263229; --muted:#68736a;
+      --line:#e5e3d9; --white:#fff; --radius:24px;
+      --shadow:0 18px 50px rgba(39,55,43,.09);
+      --serif:"Playfair Display", Georgia, serif;
+      --sans:"Manrope", Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:84px}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    button,a{ -webkit-tap-highlight-color:transparent}
+    .wrap{width:min(1120px,calc(100% - 40px));margin-inline:auto}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(247,244,236,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(52,72,58,.09)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:800;letter-spacing:-.04em;color:var(--forest)}
+    .brand-mark{width:38px;height:38px;border-radius:50% 50% 50% 8px;background:var(--forest);display:grid;place-items:center;color:#fff;font-family:var(--serif);font-size:20px}
+    .brand small{display:block;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:700}
+    .navlinks{display:flex;align-items:center;gap:25px;font-size:13px;font-weight:700;color:#566258}
+    .navlinks a{text-decoration:none}
+    .navlinks a:hover{color:var(--forest)}
+    .btn{min-height:52px;display:inline-flex;align-items:center;justify-content:center;padding:0 24px;border-radius:999px;background:var(--forest);color:white;text-decoration:none;font:800 14px var(--sans);border:1px solid var(--forest);transition:transform .2s,background .2s,box-shadow .2s;cursor:pointer}
+    .btn:hover{background:var(--forest-deep);transform:translateY(-2px);box-shadow:0 10px 24px rgba(36,53,42,.18)}
+    .btn.secondary{background:transparent;color:var(--forest);border-color:rgba(52,72,58,.3)}
+    .btn.secondary:hover{background:var(--sage-light);box-shadow:none}
+    .btn.light{background:var(--paper);color:var(--forest);border-color:var(--paper)}
+    .btn.full{width:100%}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--forest);font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:24px;height:1px;background:var(--sand)}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;line-height:1.12}
+    h1{font-size:clamp(43px,6vw,72px);max-width:720px;margin:20px 0}
+    h2{font-size:clamp(34px,4.5vw,52px);margin:15px 0 18px}
+    h3{font-size:25px;margin-bottom:12px}
+    .lead{font-size:17px;line-height:1.8;color:#5e6a60;max-width:590px}
+    .hero{padding:76px 0 86px;overflow:hidden;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:52px;align-items:center}
+    .hero-copy{position:relative;z-index:2}
+    .hero h1 em{font-style:normal;color:#758966}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:29px 0 18px}
+    .micro{font-size:12px;color:var(--muted)}
+    .hero-art{min-height:490px;position:relative;display:grid;place-items:center}
+    .art-blob{position:absolute;width:min(100%,465px);aspect-ratio:1;border-radius:48% 52% 58% 42% / 43% 42% 58% 57%;background:#e5e9db;transform:rotate(-8deg)}
+    .art-panel{position:relative;width:82%;max-width:390px;min-height:410px;border-radius:190px 190px 28px 28px;background:linear-gradient(155deg,#d6dfc8,#a9b99a);overflow:hidden;box-shadow:var(--shadow);display:flex;align-items:flex-end;justify-content:center}
+    .plate{position:absolute;width:245px;height:245px;border-radius:50%;background:#f8f3e8;top:62px;left:50%;transform:translateX(-50%);box-shadow:0 14px 32px rgba(52,72,58,.13);display:grid;place-items:center}
+    .plate-inner{width:190px;height:190px;border-radius:50%;background:radial-gradient(circle at 48% 45%,#f0d9a5 0 17%,transparent 18%),radial-gradient(ellipse at 25% 38%,#78965e 0 14%,transparent 15%),radial-gradient(ellipse at 68% 65%,#c96e48 0 16%,transparent 17%),radial-gradient(ellipse at 67% 28%,#78965e 0 12%,transparent 13%),radial-gradient(ellipse at 35% 72%,#d7a94f 0 13%,transparent 14%),#e9e2c9}
+    .art-leaf{position:absolute;bottom:0;left:3%;width:120px;height:210px;border-left:3px solid #667e57;transform:rotate(-22deg);opacity:.85}
+    .art-leaf:before,.art-leaf:after{content:"";position:absolute;width:70px;height:32px;background:#82976e;border-radius:100% 0 100% 0;left:-4px;top:35px;transform:rotate(-28deg);box-shadow:16px 49px 0 -1px #91a47d,5px 100px 0 -2px #738c61}
+    .art-note{position:absolute;right:0;bottom:35px;background:var(--paper);padding:17px 20px;border-radius:17px;box-shadow:var(--shadow);max-width:190px;font-size:12px;color:var(--muted)}
+    .art-note strong{display:block;font-family:var(--serif);font-size:18px;color:var(--forest);margin-bottom:3px}
+    .trustline{display:flex;gap:18px;flex-wrap:wrap;margin-top:27px;color:#637064;font-size:12px;font-weight:700}
+    .trustline span:before{content:"✓";color:#71845f;margin-right:7px}
+    section{padding:88px 0}
+    .section-head{max-width:690px;margin-bottom:42px}
+    .section-head.center{text-align:center;margin-inline:auto}
+    .section-head.center .eyebrow{justify-content:center}
+    .section-head p{color:var(--muted);font-size:15px;line-height:1.8}
+    .problem{background:var(--paper)}
+    .problem-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:65px;align-items:center}
+    .quote-card{background:var(--sage-light);padding:35px;border-radius:var(--radius);position:relative}
+    .quote-mark{font:64px var(--serif);color:#82936f;line-height:.8}
+    .quote-card p{font:23px/1.45 var(--serif);color:var(--forest);margin:15px 0 0}
+    .problem-list{display:grid;gap:16px}
+    .problem-item{display:flex;gap:15px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line)}
+    .problem-item:last-child{border:0}
+    .round-icon{flex:0 0 38px;width:38px;height:38px;border-radius:50%;background:var(--sage-light);display:grid;place-items:center;color:var(--forest);font-weight:800}
+    .problem-item strong{display:block;margin-bottom:4px}
+    .problem-item p{font-size:13px;color:var(--muted);margin:0}
+    .agitation{background:var(--forest);color:white;position:relative;overflow:hidden}
+    .agitation:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-130px;top:-170px;box-shadow:0 0 0 35px rgba(255,255,255,.025),0 0 0 70px rgba(255,255,255,.02)}
+    .agitation .eyebrow{color:#d8e0ce}
+    .agitation h2{max-width:750px}
+    .agitation .section-head p{color:#d2dbd0}
+    .agitation-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative;z-index:1}
+    .agitation-card{padding:25px;border:1px solid rgba(255,255,255,.18);border-radius:18px;background:rgba(255,255,255,.055)}
+    .agitation-card b{font:25px var(--serif);color:#dce5d1;display:block;margin-bottom:10px}
+    .agitation-card p{font-size:13px;color:#d2dbd0;margin:0}
+    .solution{background:var(--cream)}
+    .solution-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+    .method-visual{background:#e8ecdf;border-radius:var(--radius);padding:30px;min-height:390px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+    .method-step{display:flex;align-items:center;gap:16px;background:rgba(255,254,250,.82);padding:17px;border-radius:15px}
+    .method-step .num{font:24px var(--serif);color:#80916e}
+    .method-step strong{display:block;font-size:14px}
+    .method-step small{color:var(--muted);font-size:12px}
+    .benefits{display:grid;gap:16px;margin:28px 0}
+    .benefit{display:flex;gap:14px}
+    .benefit .round-icon{background:#e8ecdf}
+    .benefit strong{display:block;font-size:14px;margin-bottom:3px}
+    .benefit p{font-size:13px;color:var(--muted);margin:0}
+    .testimonials{background:var(--paper)}
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .testi{padding:25px;border:1px solid var(--line);border-radius:20px;background:#fff}
+    .stars{letter-spacing:3px;color:#b58a55;font-size:13px;margin-bottom:15px}
+    .testi blockquote{margin:0 0 20px;font:18px/1.55 var(--serif);color:#39483d}
+    .testi .person{font-size:12px;color:var(--muted);font-weight:700}
+    .testi .person strong{display:block;color:var(--forest);font-size:13px}
+    .proof-note{font-size:11px;color:var(--muted);margin-top:18px}
+    .offer{background:#e8ecdf}
+    .offer-card{display:grid;grid-template-columns:1.1fr .9fr;background:var(--paper);border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}
+    .offer-main{padding:42px}
+    .offer-main p{color:var(--muted);font-size:14px}
+    .offer-side{background:var(--forest);color:white;padding:42px;display:flex;flex-direction:column;justify-content:center}
+    .price-label{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:#d5dfce;font-weight:800}
+    .price{font:clamp(42px,5vw,58px) var(--serif);margin:8px 0 2px}
+    .price-sub{font-size:12px;color:#d5dfce;margin-bottom:23px}
+    .offer-points{display:grid;gap:12px;margin:25px 0 0;padding:0;list-style:none}
+    .offer-points li{font-size:13px;color:#e3e9df}
+    .offer-points li:before{content:"✓";margin-right:10px;color:#d5dfce}
+    .faq{background:var(--cream)}
+    .faq-wrap{max-width:800px;margin:auto}
+    details{border-bottom:1px solid #dcded3;padding:20px 0}
+    summary{cursor:pointer;list-style:none;font-weight:800;font-size:15px;display:flex;justify-content:space-between;gap:15px}
+    summary::-webkit-details-marker{display:none}
+    summary:after{content:"+";font-size:22px;color:#77896a;line-height:1}
+    details[open] summary:after{content:"−"}
+    details p{color:var(--muted);font-size:14px;max-width:700px;margin:13px 0 0}
+    .final-cta{background:var(--forest);color:white;text-align:center;padding:88px 0}
+    .final-cta .eyebrow{color:#d5dfce;justify-content:center}
+    .final-cta h2{max-width:720px;margin:18px auto}
+    .final-cta p{color:#d5dfce;max-width:600px;margin:0 auto 28px}
+    .final-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .final-cta .btn.secondary{color:white;border-color:rgba(255,255,255,.5)}
+    .final-cta .btn.secondary:hover{background:rgba(255,255,255,.1)}
+    footer{padding:28px 0;background:#24352a;color:#d5dfce;font-size:11px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-inner a{color:#fff}
+    .disclaimer{max-width:780px;margin:14px 0 0;color:#bdc9bd;line-height:1.7}
+    .wa-float{position:fixed;z-index:30;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#2d6c4b;color:#fff;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.2);font-size:23px;font-weight:800}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:768px){
+      .navlinks{display:none}.hero-grid,.problem-grid,.solution-grid{grid-template-columns:1fr;gap:30px}
+      .hero{padding:55px 0 65px}.hero-art{min-height:420px}.art-panel{min-height:360px}
+      .agitation-grid,.testi-grid{grid-template-columns:1fr}
+      .offer-card{grid-template-columns:1fr}.offer-main,.offer-side{padding:32px}
+    }
+    @media(max-width:480px){
+      .wrap{width:min(100% - 30px,1120px)}
+      .nav{height:66px}.brand{font-size:14px}.nav>.btn{min-height:44px;padding:0 15px;font-size:12px}
+      h1{font-size:43px}h2{font-size:35px}.lead{font-size:15px}
+      section{padding:65px 0}.hero-actions{display:grid}.hero-actions .btn{width:100%}
+      .hero-art{min-height:355px}.art-panel{width:83%;min-height:320px}.plate{width:205px;height:205px;top:48px}.plate-inner{width:160px;height:160px}
+      .art-note{right:-2px;bottom:12px;padding:13px;max-width:155px}
+      .quote-card{padding:25px}.quote-card p{font-size:20px}
+      .method-visual{padding:18px;min-height:330px}
+      .offer-main,.offer-side{padding:27px}
+      .final-cta{padding:68px 0}.wa-float{width:54px;height:54px;right:14px;bottom:14px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+    }
+  </style>
+</head>
+<body>
+  <!-- CONFIGURATION : remplace les deux valeurs ci-dessous avant publication. -->
+  <script>
+    const SITE_CONFIG = {
+      paymentUrl: "https://LIEN-FEDAPAY-A-CONFIGURER",
+      whatsappUrl: "https://wa.me/221XXXXXXXXX"
+    };
+  </script>
+
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#accueil" aria-label="Amara Diallo Nutrition, accueil">
+        <span class="brand-mark">A</span>
+        <span>Amara Diallo <small>Nutrition</small></span>
+      </a>
+      <nav class="navlinks" aria-label="Navigation principale">
+        <a href="#methode">La méthode</a><a href="#temoignages">Témoignages</a><a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn" href="#offre">Découvrir la formation</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Amara Diallo Nutrition · Équilibre Naturel</span>
+          <h1>Mieux manger, sans régime extrême. <em>Et durablement.</em></h1>
+          <p class="lead">Apprenez à construire une alimentation plus équilibrée, adaptée à vos habitudes et aux aliments de chez nous — sans culpabilité ni méthodes impossibles à tenir.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#offre">Découvrir Équilibre Naturel</a>
+            <a class="btn secondary" href="#methode">Voir comment ça fonctionne</a>
+          </div>
+          <div class="micro">Une approche pédagogique et accessible, pensée pour le quotidien des femmes africaines.</div>
+          <div class="trustline"><span>Aliments locaux</span><span>Habitudes durables</span><span>À votre rythme</span></div>
+        </div>
+        <div class="hero-art reveal" aria-label="Illustration abstraite d'un repas équilibré avec des aliments variés" role="img">
+          <div class="art-blob"></div>
+          <div class="art-panel"><div class="plate"><div class="plate-inner"></div></div><div class="art-leaf"></div></div>
+          <div class="art-note"><strong>Le bon équilibre</strong>Des choix simples, réalistes et adaptés à votre vie.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="probleme">
+      <div class="wrap problem-grid">
+        <div class="quote-card reveal">
+          <div class="quote-mark">“</div>
+          <p>Vous n'avez pas besoin d'un régime de plus. Vous avez besoin de comprendre comment mieux manger dans la vraie vie.</p>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Le problème</span>
+          <h2>Vous voulez prendre soin de vous, mais les conseils se contredisent.</h2>
+          <div class="problem-list">
+            <div class="problem-item"><span class="round-icon">1</span><div><strong>Des règles trop strictes</strong><p>On vous demande de supprimer des aliments ou de bouleverser toutes vos habitudes.</p></div></div>
+            <div class="problem-item"><span class="round-icon">2</span><div><strong>Des conseils difficiles à appliquer</strong><p>Les menus proposés ne tiennent pas toujours compte de vos aliments, de votre budget ou de votre rythme.</p></div></div>
+            <div class="problem-item"><span class="round-icon">3</span><div><strong>La fatigue de recommencer</strong><p>Quand une méthode est trop contraignante, il devient difficile de la garder sur la durée.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="agitation">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Ce que cela change</span>
+          <h2>À force de chercher la méthode parfaite, on finit parfois par perdre confiance.</h2>
+          <p>Les restrictions répétées peuvent rendre l'alimentation stressante et éloigner du plaisir de manger. Vous méritez une approche qui s'intègre à votre quotidien, pas une nouvelle pression.</p>
+        </div>
+        <div class="agitation-grid">
+          <article class="agitation-card reveal"><b>Moins de culpabilité</b><p>Sortir du réflexe de considérer chaque repas comme une réussite ou un échec.</p></article>
+          <article class="agitation-card reveal"><b>Plus de repères</b><p>Comprendre les principes qui aident à composer des repas équilibrés.</p></article>
+          <article class="agitation-card reveal"><b>Une démarche durable</b><p>Avancer progressivement, avec des habitudes réalistes plutôt que des interdits.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="solution" id="methode">
+      <div class="wrap solution-grid">
+        <div class="method-visual reveal" aria-label="Les trois étapes de la démarche Équilibre Naturel">
+          <div class="method-step"><span class="num">01</span><div><strong>Comprendre</strong><small>Découvrir les bases d'une alimentation équilibrée.</small></div></div>
+          <div class="method-step"><span class="num">02</span><div><strong>Adapter</strong><small>Faire des choix compatibles avec vos habitudes et vos aliments locaux.</small></div></div>
+          <div class="method-step"><span class="num">03</span><div><strong>Installer</strong><small>Construire des habitudes que vous pouvez maintenir.</small></div></div>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">La solution</span>
+          <h2>Découvrez Équilibre Naturel.</h2>
+          <p class="lead">Une formation en ligne créée par Amara Diallo, coach en nutrition certifiée avec trois années d'expérience, pour vous aider à mieux comprendre votre alimentation et à avancer sans régime draconien.</p>
+          <div class="benefits">
+            <div class="benefit"><span class="round-icon">✓</span><div><strong>Des repères concrets</strong><p>Comprenez comment composer vos repas au lieu de suivre des règles incompréhensibles.</p></div></div>
+            <div class="benefit"><span class="round-icon">✓</span><div><strong>Une approche proche de vos habitudes</strong><p>Faites une place aux aliments et aux recettes de votre quotidien.</p></div></div>
+            <div class="benefit"><span class="round-icon">✓</span><div><strong>Le plaisir sans extrêmes</strong><p>Apprenez à progresser sans bannir systématiquement les aliments que vous aimez.</p></div></div>
+          </div>
+          <a class="btn" href="#offre">Voir la formation et son tarif</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="temoignages">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Elles en parlent</span>
+          <h2>Des expériences qui comptent.</h2>
+          <p>Quelques retours de participantes sur leur expérience avec l'accompagnement d'Amara.</p>
+        </div>
+        <div class="testi-grid">
+          <article class="testi reveal"><div class="stars" aria-label="Témoignage client">★★★★★</div><blockquote>« En six semaines, j'ai perdu 4 kilos sans souffrir. Amara m'a appris à manger ce que j'aime autrement. Je recommande les yeux fermés. »</blockquote><div class="person"><strong>Fatouka</strong>Dakar</div></article>
+          <article class="testi reveal"><div class="stars" aria-label="Témoignage client">★★★★★</div><blockquote>« J'avais essayé quatre régimes avant. Pour la première fois, je comprends pourquoi ça marche. Mon rapport à la nourriture a complètement changé. »</blockquote><div class="person"><strong>Aïcha M.</strong>Abidjan</div></article>
+          <article class="testi reveal"><div class="stars" aria-label="Témoignage client">★★★★★</div><blockquote>« Le meilleur investissement santé de l'année. Les recettes sont adaptées à nos aliments locaux. Enfin quelqu'un qui nous comprend vraiment. »</blockquote><div class="person"><strong>Rokhaya D.</strong>Saint-Louis</div></article>
+        </div>
+        <p class="proof-note">Témoignages communiqués par des participantes. À publier uniquement avec leur autorisation. Les expériences et résultats sont individuels et ne constituent pas une promesse de résultat.</p>
+      </div>
+    </section>
+
+    <section class="offer" id="offre">
+      <div class="wrap">
+        <div class="offer-card reveal">
+          <div class="offer-main">
+            <span class="eyebrow">Votre prochaine étape</span>
+            <h2>Faites de l'équilibre une habitude.</h2>
+            <p>Rejoignez Équilibre Naturel et commencez à construire une relation plus sereine avec votre alimentation, avec une méthode pensée pour la vie de tous les jours.</p>
+            <ul class="offer-points" style="color:var(--ink)">
+              <li style="color:var(--ink)">Une formation en ligne</li>
+              <li style="color:var(--ink)">Une approche sans régime draconien</li>
+              <li style="color:var(--ink)">Des repères adaptés aux habitudes alimentaires locales</li>
+            </ul>
+          </div>
+          <div class="offer-side">
+            <span class="price-label">Investissement</span>
+            <div class="price">35 000 <span style="font-size:20px">FCFA</span></div>
+            <div class="price-sub">Prix de la formation Équilibre Naturel</div>
+            <a class="btn light full js-payment" href="#offre">Accéder à la formation</a>
+            <p style="font-size:11px;color:#d5dfce;margin:14px 0 0">Le paiement sera effectué sur la page sécurisée du prestataire dès que le lien officiel sera configuré.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="wrap faq-wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Questions fréquentes</span>
+          <h2>Avant de vous lancer.</h2>
+        </div>
+        <div class="reveal">
+          <details><summary>Est-ce un régime strict pour perdre du poids ?</summary><p>Non. Équilibre Naturel est présenté comme une formation d'éducation alimentaire et de rééquilibrage, pas comme un régime draconien. Elle vise à vous aider à comprendre vos choix alimentaires et à construire des habitudes plus durables.</p></details>
+          <details><summary>La méthode tient-elle compte des aliments africains ?</summary><p>Oui, l'approche met l'accent sur les habitudes et les aliments du quotidien en Afrique. Les recettes et exemples précis doivent être consultés dans le contenu de la formation.</p></details>
+          <details><summary>Est-ce que je vais forcément perdre du poids ?</summary><p>Non. Aucun résultat chiffré ne peut être garanti : les résultats varient selon les personnes, leur situation et leurs habitudes. La formation a pour objectif de transmettre des repères pour mieux manger, et ne remplace pas un suivi médical ou diététique individualisé.</p></details>
+          <details><summary>Comment vais-je recevoir la formation après le paiement ?</summary><p>Les modalités d'accès doivent être confirmées avant l'ouverture des ventes automatisées. Après configuration, cette réponse indiquera précisément la plateforme ou le lien d'accès et le délai d'envoi.</p></details>
+          <details><summary>Comment poser une question avant de payer ?</summary><p>Vous pouvez écrire à Amara sur WhatsApp grâce au bouton de contact présent sur cette page.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="wrap reveal">
+        <span class="eyebrow">Équilibre Naturel · 35 000 FCFA</span>
+        <h2>Et si vous commenciez par apprendre à manger autrement ?</h2>
+        <p>Faites le premier pas vers une alimentation plus équilibrée, plus sereine et compatible avec votre quotidien.</p>
+        <div class="final-actions">
+          <a class="btn light js-payment" href="#offre">Je découvre la formation</a>
+          <a class="btn secondary js-whatsapp" href="#offre">Poser une question sur WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-inner"><span>© <span id="year"></span> Amara Diallo Nutrition</span><span>Une approche humaine de l'équilibre alimentaire.</span><a href="#accueil">Retour en haut ↑</a></div>
+      <p class="disclaimer">Les informations de cette page sont éducatives et ne constituent pas un diagnostic ni un traitement médical. En cas de problème de santé, demandez conseil à un professionnel de santé qualifié. Les résultats varient d'une personne à l'autre.</p>
+    </div>
+  </footer>
+
+  <a class="wa-float js-whatsapp" href="#offre" aria-label="Contacter Amara sur WhatsApp" title="Contacter sur WhatsApp">↗</a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Les liens restent volontairement en attente tant que les coordonnées officielles ne sont pas fournies.
+    document.querySelectorAll(".js-payment").forEach(link => {
+      link.href = SITE_CONFIG.paymentUrl;
+      link.addEventListener("click", event => {
+        if (SITE_CONFIG.paymentUrl.includes("A-CONFIGURER")) {
+          event.preventDefault();
+          alert("Le lien de paiement FedaPay officiel doit être ajouté avant la mise en ligne.");
+        }
+      });
+    });
+    document.querySelectorAll(".js-whatsapp").forEach(link => {
+      link.href = SITE_CONFIG.whatsappUrl;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.addEventListener("click", event => {
+        if (SITE_CONFIG.whatsappUrl.includes("XXXXXXXXX")) {
+          event.preventDefault();
+          alert("Le numéro WhatsApp officiel doit être ajouté avant la mise en ligne.");
+        }
+      });
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.12});
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
